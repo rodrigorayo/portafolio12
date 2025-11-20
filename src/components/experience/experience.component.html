@@ -1,0 +1,26 @@
+<section id="experiencia" class="w-full">
+  <h2 class="font-orbitron text-2xl md:text-3xl font-bold uppercase mb-8">
+    <span class="tactical-text-accent">[04]</span> HISTORIAL :: EXPERIENCIA Y CV
+  </h2>
+  
+  <div class="relative pl-6 border-l-2 tactical-border">
+    @for (item of experience(); track $index) {
+      <div class="mb-10">
+        <!-- Timeline Dot -->
+        <div class="absolute -left-[11px] top-1 h-5 w-5 bg-[#0F0F0F] border-2 tactical-border rounded-full"></div>
+
+        <p class="font-roboto-mono text-sm tactical-text-accent mb-1">[ {{ item.period }} ]</p>
+        <h3 class="font-orbitron text-xl font-bold">{{ item.role }}</h3>
+        <p class="font-bold text-gray-400 mb-2">{{ item.company }}</p>
+        <p class="text-gray-300 text-sm leading-relaxed">{{ item.description }}</p>
+      </div>
+    }
+  </div>
+
+  <div class="mt-12 text-center">
+    <a [href]="cvFileUrl" download="CV-Javier-Mendoza.pdf" class="tactical-btn inline-flex items-center gap-2 px-8 py-3 uppercase font-bold text-sm tracking-widest">
+      <i data-lucide="download-cloud" class="w-5 h-5"></i>
+      <span>[DOWNLOAD | FILE: CV.PDF]</span>
+    </a>
+  </div>
+</section>
